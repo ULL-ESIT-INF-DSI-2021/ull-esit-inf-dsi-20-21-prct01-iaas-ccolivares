@@ -1,14 +1,5 @@
-# DESARROLLO DE SISTEMAS INFORMÁTICOS
+# Configuración de máquina virtual en el IaaS
 
-## Autor
-
-* Nombre: *Carla Cristina Olivares Rodríguez*
-* E-mail: *alu010112018@ull.edu.es*
-
-
-## Enlaces  
-
-#### INFORMES
-
-* [Práctica 1: Configuración de máquina virtual en el IaaS]()
+- *Carla Cristina Olivares Rodríguez*
+- *alu010112018@ull.edu.es*
 
