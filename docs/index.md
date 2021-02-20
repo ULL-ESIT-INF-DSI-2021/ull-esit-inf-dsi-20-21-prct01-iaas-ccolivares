@@ -29,13 +29,86 @@ Luego de este paso podremos acceder con nuestras credenciales institucionales y 
 
 ### Accediendo y configurando la máquina virtual
 
+En el servicio IaaS de la ULL tendremos habilitada una máquina virual específica para la asignatura, la cual al arrancarla se nos asignará una entre una serie de maquinas virtuales, el nombre que esta tenga, en nuestro caso es `<DSI-27>`.
 
+![Máquina virtual IaaS](image/dsi3.png)
 
-#### Accedemos a la máquina virtual
+#### Accediendo a la máquina virtual
 
-#### Modificar configuraciones
+En el panel de nuestra máquina virtual en el servicio IaaS encontraremos toda la información relacionada con la máquina; necesitaremos la dirección IP asignada a la interfaz para realizar la conexión remota a nuestra máquina virtual: 
+
+![IP de la máquina virtual](image/dsi2.png)
+
+Una vez teniendo esta información nos disponemos a realizar una conexión remota con nuestra máquina virtual mediante el comando SSH. 
+
+```
+ssh usuario@10.6.130.76
+```
+Aceptamos el mensaje emitido por la terminal y comenzaremos a configurar nuestra máquina virtual.
+
+#### Configuración de la máquina virtual
+
+Las credenciales por defecto seran 
+```
+usuario: usuario
+contraseña: usuario
+```
+El sistema nos pedirá que modifiquemos la contraseña, pidiendonos en primer lugar la contraseña antigua y luego introduciremos nuestra nueva credencial, tendremos que volver a iniciar sesión con esta. 
+
+Ahora procederemos a modificar el nombre de host de nuestra máquina virtual en el fichero `/etc/hostname`:
+
+![Nombre del host de la mv modificado](image/dsi1.png)
+
+Debemos de la misma forma editar algunos parámetros del fichero `/etc/host`:
+
+![Nombre del host de la mv modificado](image/dsi4.png)
+
+Es necesario también que actualicemos el sistema de nuestra virtual, esta acción la haremos mediante los siguientes comandos: 
+
+```
+sudo apt update
+...
+sudo apt upgrade
+```
+
+Al completar las actualizaciones reiniciaremos nuestra máquina virtual.
+
+Para finalizar con la configuración generaremos las claves pública-privada en la máquina virtual: 
+
+![Clave SSH máquina virtual](image/dsi9.png)
 
 ### Configuración para la máquina local
+
+En primer lugar editaremos el fichero de host de la máquina local e incluiremos la información necesaria para que reconozca la máquina virtual. 
+
+![Nombre del host de la ml modificado](image/dsi5.png)
+
+Para continuar configuraremos la infraestructura de clave pública-privada. En nuestro caso comenzaremos generandola:
+
+![Generado de la key SSH](image/dsi6.png)
+
+Ejecutaremos el siguiente comando que nos permitirá copiar nuestra clave pública desde la máquina local a la virtual: 
+
+![Copiando la clave SSH entre máquinas](image/dsi7.png)
+
+Gracias a estos ajustes que hemos hecho ahora podremos iniciar la conexión remota de nuestra máquina virtual sin necesidad de contraseña con el siguiente comando:
+
+```
+shh usuario@iaas-dsi27
+```
+
+#### Configuración adicional para la conexión remota
+
+Realizaremos una serie de ajustes para simplificar aún mas el comando que utilizaremos para realizar una conexión remota a nuestra máquina virtual, en este caso suprimiendo el nombre "usuario" del mismo. 
+
+Crearemos un fichero en `~/.ssh` que se llamará config y lo editaremos de la siguiente forma: 
+
+![Fichero config usuario](image/dsi8.1.png)
+
+De esta forma podremos realizar la conexión remota mediante el comando SSH a nuestra máquina virtual con un comando mucho más simplificado:
+
+![Comando final SSH](image/dsi8.2.png)
+
 
 ### Instalación de git y Node.js en la máquina virtual
 
