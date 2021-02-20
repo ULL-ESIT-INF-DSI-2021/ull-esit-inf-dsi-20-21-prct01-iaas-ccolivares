@@ -27,6 +27,8 @@ En primer lugar llevaremos a cabo una serie de pasos para el correcto funcionami
 ```
 vpn.ull.es
 ```
+![Portal de la ULL](image/dsi18.png)
+
 Luego de este paso podremos acceder con nuestras credenciales institucionales y obtendríamos de esta forma el acceso a la red de la ULL.
 
 ![Global Protect](image/dsi17.png)
