@@ -1,8 +1,3 @@
-# Configuración de máquina virtual en el IaaS
-
-- *Carla Cristina Olivares Rodríguez*
-- *alu010112018@ull.edu.es*
-
 ## Introducción
 
 Para esta práctica realizaremos la configuración de una máquina virtual alojada en el servicio IaaS de la Universidad de La Laguna. Esta como otras herramientas que configuraremos son necesarias para el correcto desarrollo de la asignatura. 
@@ -33,6 +28,8 @@ Luego de este paso podremos acceder con nuestras credenciales institucionales y 
 ![Global Protect](image/dsi17.png)
 
 ### Accediendo y configurando la máquina virtual
+
+
 
 #### Accedemos a la máquina virtual
 
