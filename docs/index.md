@@ -112,3 +112,38 @@ De esta forma podremos realizar la conexión remota mediante el comando SSH a nu
 
 ### Instalación de git y Node.js en la máquina virtual
 
+Comenzaremos las instalaciones con git, que generalmente suele venir preinstalado en el sistema, como fue nuestro caso: 
+
+![Instalación git](image/dsi10.png)
+
+Realizaremos para git una serie de configuraciones inciales generales, para ello ejecutaremos (en mi caso) los siguientes comandos: 
+
+```
+git config --global user.name "ccolivares"
+git config --global user.email alu0101120218@ull.edu.es
+```
+y comprobaremos la aplicación de las mismas con: 
+```
+git config --list
+```
+
+![Configuración git](image/dsi11.png)
+
+Continuaremos configurando el prompt de la terminal para que aparezca la rama actual en la que nos encontramos cuando accedemos a un directorio que está asociado a un repositorio git.
+
+Descargaremos el script [git prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) y lo colocaremos en la raíz, cuidando que el nombre del mismo sea `.git-prompt.sh`.
+
+Luego editaremos el archivo `~/.bashrc` e insertaremos al final del contenido del archivo las siguientes lineas: 
+```
+source ~/.git-prompt.sh
+PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
+```
+
+Ahora ejecutaremos el siguiente comando, que hará una acción similar a un reinicio a nuestra terminal:
+
+![Comando exec bash -l](image/dsi12.png)
+
+#### Añadiendo la clave pública a GitHub
+
+Para añadir nuestra clave pública de la máquina virtual en la configuración de las claves de nuestra cuenta de GitHub la copiaremos en primer lugar: 
+
