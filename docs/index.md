@@ -4,7 +4,7 @@ Para esta práctica realizaremos la configuración de una máquina virtual aloja
 
 ## Objetivos
 
-El objetivo de esta practica será la configuración de todas las herramientas necesarias para llevar a cabo las distintas tareas de la asignatura, además de todo el aprendizaje que conlleva.
+El objetivo de esta práctica será la configuración de todas las herramientas necesarias para llevar a cabo las distintas tareas de la asignatura, además de todo el aprendizaje que conlleva.
 
 Configuraremos la VPN correspondiente de la Universidad para así tener acceso al servicio IaaS, el cual almacenará nuestra máquina virtual. Trabajaremos también con las conexiones remotas y sus distintos ajustes en la máquina local.
 
@@ -16,20 +16,20 @@ Para la documentación de nuestro trabajo utilizaremos GitHub, en un repositorio
 
 ### Configuración del servicio de VPN de la ULL
 
-En primer lugar llevaremos a cabo una serie de pasos para el correcto funcionamiento de la VPN proporcionada por la ULL, lo haremos utilizando el cliente "Global Protect". Luego de realizar una instalación en el correspondiente sistema operativo el ciente solicitará la dirección del portal al que deberá conectarse, en nuestro caso: 
+En primer lugar llevaremos a cabo una serie de pasos para el correcto funcionamiento de la VPN proporcionada por la ULL, lo haremos utilizando el cliente "Global Protect". Luego de realizar una instalación en el correspondiente sistema operativo el cliente solicitará la dirección del portal al que deberá conectarse, en nuestro caso: 
 
 ```
 vpn.ull.es
 ```
 ![Portal de la ULL](image/dsi18.png)
 
-Luego de este paso podremos acceder con nuestras credenciales institucionales y obtendríamos de esta forma el acceso a la red de la ULL.
+Luego de este paso podremos acceder con nuestras credenciales institucionales y obtendremos de esta forma el acceso a la red de la ULL.
 
 ![Global Protect](image/dsi17.png)
 
 ### Accediendo y configurando la máquina virtual
 
-En el servicio IaaS de la ULL tendremos habilitada una máquina virual específica para la asignatura, la cual al arrancarla se nos asignará una entre una serie de maquinas virtuales, el nombre que esta tenga, en nuestro caso es `<DSI-27>`.
+En el servicio IaaS de la ULL tendremos habilitada una máquina virtual específica para la asignatura, la cual al arrancarla se nos asignará una entre una serie de máquinas virtuales, el nombre que esta tenga, en nuestro caso es `<DSI-27>`.
 
 ![Máquina virtual IaaS](image/dsi3.png)
 
@@ -48,7 +48,7 @@ Aceptamos el mensaje emitido por la terminal y comenzaremos a configurar nuestra
 
 #### Configuración de la máquina virtual
 
-Las credenciales por defecto seran 
+Las credenciales por defecto serán 
 ```
 usuario: usuario
 contraseña: usuario
@@ -83,7 +83,7 @@ En primer lugar editaremos el fichero de host de la máquina local e incluiremos
 
 ![Nombre del host de la ml modificado](image/dsi5.png)
 
-Para continuar configuraremos la infraestructura de clave pública-privada. En nuestro caso comenzaremos generandola:
+Para continuar configuraremos la infraestructura de clave pública-privada. En nuestro caso comenzaremos generando la misma:
 
 ![Generado de la key SSH](image/dsi6.png)
 
@@ -118,7 +118,7 @@ Comenzaremos las instalaciones con git, que generalmente suele venir preinstalad
 
 ![Instalación git](image/dsi10.png)
 
-Realizaremos para git una serie de configuraciones inciales generales, para ello ejecutaremos (en mi caso) los siguientes comandos: 
+Realizaremos para git una serie de configuraciones iniciales generales, para ello ejecutaremos (en mi caso) los siguientes comandos: 
 
 ```
 git config --global user.name "ccolivares"
@@ -135,7 +135,7 @@ Continuaremos configurando el prompt de la terminal para que aparezca la rama ac
 
 Descargaremos el script [git prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) y lo colocaremos en la raíz, cuidando que el nombre del mismo sea `.git-prompt.sh`.
 
-Luego editaremos el archivo `~/.bashrc` e insertaremos al final del contenido del archivo las siguientes lineas: 
+Luego editaremos el archivo `~/.bashrc` e insertamos al final del contenido del archivo las siguientes líneas: 
 ```
 source ~/.git-prompt.sh
 PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
@@ -151,7 +151,7 @@ Para añadir nuestra clave pública de la máquina virtual en la configuración 
 
 ![Clave SSH generada](image/dsi9.1.png)
 
-Una vez generada procedemos a modificar la configuración de nuestra cuenta personal en GitHub; nos dirijimos a *account settings*/*SSH and GPG keys* y añadimos una nueva clave SSH (add SSH key). 
+Una vez generada procedemos a modificar la configuración de nuestra cuenta personal en GitHub; nos dirigimos a *account settings*/*SSH and GPG keys* y añadimos una nueva clave SSH (add SSH key). 
 
 ![Clave SSH en GitHub](image/dsi13.png)
 
@@ -168,3 +168,27 @@ Utilizaremos el gestión de versiones de Node.js *"Node Version Manager"* (nvm).
 Para finalizar instalaremos la versión más reciente de Node.js:
 
 ![Node.js](image/dsi16.png)
+
+## Conclusiones
+
+En esta práctica hemos trabajado con distintas herramientas que nos han dejado enseñanzas diversas, entre ellas una noción básica del control de GitHub así como git y sus distintos parámetros y funcionalidades. También trabajamos con las conexiones remotas necesarias y los ajustes para el correcto funcionamiento de las mismas. 
+Además para este informe hemos aprendido a desenvolvernos en Markdown y GitHub Pages, de esta forma hemos investigado opciones de personalización para la formalización de nuestro trabajo. 
+
+Todas estas enseñanzas son muy útiles para mejorar nuestros recursos y aprender a adaptarnos a distintos entornos, crear facilidades y prepararnos para desarrollar con todas las herramientas que lograrán un mejor resultado en todos nuestros proyectos.
+
+## Bibliografía
+
+- [Guión de la práctica 1](https://ull-esit-inf-dsi-2021.github.io/prct01-iaas/)
+
+- [Configurando git por primera vez](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez)
+
+- [Servicio VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/)
+
+- [Guía básica de Markdown](https://guides.github.com/features/mastering-markdown/)
+
+- [Guía de GitHub Pages](https://docs.github.com/en/github/working-with-github-pages)
+
+- [Sitio Web de Jekyll](https://jekyllrb.com)
+
+- [Tema para GitHub Pages: Time Machine](https://github.com/pages-themes/time-machine)
+
