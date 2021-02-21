@@ -112,6 +112,8 @@ De esta forma podremos realizar la conexión remota mediante el comando SSH a nu
 
 ### Instalación de git y Node.js en la máquina virtual
 
+#### Instalación y configuración de git
+
 Comenzaremos las instalaciones con git, que generalmente suele venir preinstalado en el sistema, como fue nuestro caso: 
 
 ![Instalación git](image/dsi10.png)
@@ -143,7 +145,26 @@ Ahora ejecutaremos el siguiente comando, que hará una acción similar a un rein
 
 ![Comando exec bash -l](image/dsi12.png)
 
-#### Añadiendo la clave pública a GitHub
+##### Añadiendo la clave pública a GitHub
 
 Para añadir nuestra clave pública de la máquina virtual en la configuración de las claves de nuestra cuenta de GitHub la copiaremos en primer lugar: 
 
+![Clave SSH generada](image/dsi9.1.png)
+
+Una vez generada procedemos a modificar la configuración de nuestra cuenta personal en GitHub; nos dirijimos a *account settings*/*SSH and GPG keys* y añadimos una nueva clave SSH (add SSH key). 
+
+![Clave SSH en GitHub](image/dsi13.png)
+
+Luego de realizar esta configuración podremos clonar el repositorio desde nuestra máquina virtual:
+
+![Clonar repositorio](image/dsi14.png)
+
+#### Instalación y configuración de Node Version Manager y Node.js
+
+Utilizaremos el gestión de versiones de Node.js *"Node Version Manager"* (nvm). Lo instalaremos de la siguiente forma: 
+
+![Node Version Manager](image/dsi15.png)
+
+Para finalizar instalaremos la versión más reciente de Node.js:
+
+![Node.js](image/dsi16.png)
